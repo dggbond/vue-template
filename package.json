@@ -1,0 +1,9 @@
+{
+  "name": "vue-template",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zmaoo/vue-template.git",
+  "author": "mao.zheng <zhengmao0613@163.com>",
+  "license": "MIT",
+  "private": false
+}
