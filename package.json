@@ -5,5 +5,9 @@
   "repository": "git@github.com:zmaoo/vue-template.git",
   "author": "mao.zheng <zhengmao0613@163.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "vue": "^2.6.10",
+    "webpack": "^4.29.6"
+  }
 }
