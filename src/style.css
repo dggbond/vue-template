@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "TestFont";
+  src: url(/static/font/Pacifico.ttf);
+  font-style: normal;
+}
+
+html {
+  font-family: TestFont;
+  color: red;
+  font-size: 12px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+#img {
+  width: 100px;
+  height: 100px;
+  background-image: url("/static/icon/seal-cry.svg")
+}
