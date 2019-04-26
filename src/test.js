@@ -1,1 +1,3 @@
-console.log("test file")
+import _ from "lodash"
+
+console.log("test files")

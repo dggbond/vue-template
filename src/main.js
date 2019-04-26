@@ -1,5 +1,4 @@
 import _ from "lodash"
-import "./test.js"
 import "./style.css"
 
 const createEl = (tag = "div", selector = "body") => {

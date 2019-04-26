@@ -1,4 +1,12 @@
+const Webpack = require("webpack")
+const WebpackDevServer = require("webpack-dev-server")
 const webpackConfig = require("./webpack.config")
-const webpack = require("webpack")
+const serverConfig = require("./server.config")
 
-webpack(webpackConfig)
+const compiler = Webpack(webpackConfig)
+
+const server = new WebpackDevServer(compiler, serverConfig)
+
+server.listen(serverConfig.port, serverConfig.host, () => {
+  console.log("serve start")
+})
