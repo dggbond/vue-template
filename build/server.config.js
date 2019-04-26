@@ -6,7 +6,6 @@ module.exports = {
   compress: true,
   port: 9000,
   host: "localhost",
-  https: true,
   hot: true,
   overlay: true,
   stats: {
