@@ -2,6 +2,7 @@ const path = require("path")
 const resolve = p => path.resolve(__dirname, "..", p)
 
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -34,9 +35,10 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      base: resolve("index.html"),
+      template: resolve("index.html"),
       filename: "index.html", // default
-    })
+    }),
   ],
 }
