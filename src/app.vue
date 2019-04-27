@@ -1,0 +1,9 @@
+<template lang="pug">
+#app.app app
+</template>
+
+<script>
+export default {
+
+}
+</script>

@@ -3,13 +3,13 @@ const path = require("path")
 // plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
+const VueLoaderPlugin = require("vue-loader/lib/plugin")
 
 const resolve = p => path.resolve(__dirname, "..", p)
 
 module.exports = {
   entry: {
     app: [resolve("src/main.js")],
-    test: [resolve("src/test.js")],
   },
 
   output: {
@@ -52,6 +52,12 @@ module.exports = {
       },
 
       {
+        test: /\.pug$/,
+        // pug plain loader 较轻量，仅限 Vue 组件形式的使用
+        use: ["pug-plain-loader"],
+      },
+
+      {
         test: /\.vue$/,
         loader: "vue-loader",
       },
@@ -80,5 +86,7 @@ module.exports = {
       from: "static",
       to: "static",
     }]),
+
+    new VueLoaderPlugin(),
   ],
 }

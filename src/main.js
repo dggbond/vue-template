@@ -1,10 +1,14 @@
-import _ from "lodash"
-import "./style.css"
+import Vue from "vue"
+import store from "store"
+import router from "router"
 
-const createEl = (tag = "div", selector = "body") => {
-  const el = document.createElement("img")
-  document.querySelector(selector).appendChild(el)
-  return el
-}
+import "global"
 
-createEl("img").src = "/static/icon/seal-cry.svg"
+Vue.productionTip = false
+
+new Vue({
+  el: "#root",
+  store,
+  router,
+  render: h => h(Vue.component("RouterView")),
+})
