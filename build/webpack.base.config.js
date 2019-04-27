@@ -1,6 +1,8 @@
 const path = require("path")
 
+// plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 const resolve = p => path.resolve(__dirname, "..", p)
 
@@ -15,6 +17,19 @@ module.exports = {
 
     // used from dynamic import
     chunkFilename: "[name].bundle.js",
+
+    publicPath: "/",
+  },
+
+  resolve: {
+    modules: [
+      "node_modules",
+      resolve("src"),
+      // resolve("components"),
+    ],
+    alias: {
+      // "@": resolve("src/pages"),
+    },
   },
 
   optimization: {
@@ -64,5 +79,11 @@ module.exports = {
       template: resolve("index.html"),
       filename: "index.html", // default
     }),
+
+    // 拷贝静态文件夹，不用任何处理
+    new CopyWebpackPlugin([{
+      from: "static",
+      to: "static",
+    }]),
   ],
 }

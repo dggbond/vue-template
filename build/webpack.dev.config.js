@@ -1,6 +1,5 @@
 // plugins
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin")
-const { HotModuleReplacementPlugin } = require("webpack")
 
 const webpackBaseConfig = require("./webpack.base.config")
 
@@ -12,11 +11,6 @@ module.exports = merge(webpackBaseConfig, {
   devtool: "inline-source-map",
 
   plugins: [
-    // HMR
-    new HotModuleReplacementPlugin({
-      log: false,
-    }),
-
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         message: ["success"],
