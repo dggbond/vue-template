@@ -35,11 +35,7 @@ module.exports = merge(webpackBaseConfig, {
   },
 
   plugins: [
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        message: ["success"],
-      },
-    }),
+    new FriendlyErrorsWebpackPlugin(),
 
     new HotModuleReplacementPlugin(),
   ],
