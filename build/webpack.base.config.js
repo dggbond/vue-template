@@ -13,11 +13,6 @@ module.exports = {
   },
 
   output: {
-    filename: "[name].[hash].js",
-
-    // used from dynamic import
-    chunkFilename: "[name].bundle.js",
-
     publicPath: "/",
   },
 
@@ -27,11 +22,11 @@ module.exports = {
     modules: [
       "node_modules",
       resolve("src"),
-      // resolve("components"),
+      resolve("components"),
     ],
 
     alias: {
-      // "@": resolve("src/pages"),
+      "@": resolve("src/pages"),
     },
   },
 
@@ -45,26 +40,23 @@ module.exports = {
   module: {
     // 这里的 rule 所使用的 loader 仅当使用 import 引入时才需要用到
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   use: {
-      //     loader: "babel-loader",
-      //     options: {
-      //       presets: ["@babel/preset-env"],
-      //     },
-      //   },
-      // },
+      {
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            exclude: /node_modules/,
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+
       {
         test: /\.vue$/,
         loader: "vue-loader",
       },
 
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-
-      // 用于 import 图片时，可以得到图片的绝对路径，一般不需要用到
+      // 用于 import 图片时，可以得到图片的绝对路径，一般不需要用到，字体也是
       // {
       //   test: /\.(png|svg|jpg|gif)$/,
       //   use: ["file-loader"],
@@ -78,7 +70,6 @@ module.exports = {
   },
 
   plugins: [
-    // 添加根 html 文件
     new HtmlWebpackPlugin({
       template: resolve("index.html"),
       filename: "index.html", // default

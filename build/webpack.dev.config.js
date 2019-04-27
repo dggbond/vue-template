@@ -25,6 +25,15 @@ module.exports = merge(webpackBaseConfig, {
 
   devtool: "inline-source-map",
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+
   plugins: [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
