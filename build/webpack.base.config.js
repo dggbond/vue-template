@@ -8,8 +8,8 @@ const resolve = p => path.resolve(__dirname, "..", p)
 
 module.exports = {
   entry: {
-    app: resolve("src/main.js"),
-    test: resolve("src/test.js"),
+    app: [resolve("src/main.js")],
+    test: [resolve("src/test.js")],
   },
 
   output: {
@@ -22,11 +22,14 @@ module.exports = {
   },
 
   resolve: {
+    extensions: [".js", ".vue"],
+
     modules: [
       "node_modules",
       resolve("src"),
       // resolve("components"),
     ],
+
     alias: {
       // "@": resolve("src/pages"),
     },
@@ -55,6 +58,7 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
       },
+
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],

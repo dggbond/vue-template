@@ -23,9 +23,7 @@ const devMiddlewareInstance = devMiddleware(compiler, {
   stats: "minimal",
 })
 
-const hotMiddlewareInstance = hotMiddleware(compiler, {
-  log: false,
-})
+const hotMiddlewareInstance = hotMiddleware(compiler)
 
 devMiddlewareInstance.waitUntilValid(() => {
   const url = `http://localhost:${serverConfig.port}`
