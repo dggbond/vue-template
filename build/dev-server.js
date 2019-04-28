@@ -13,8 +13,6 @@ const serverConfig = require("./server.config")
 
 const resolve = p => path.resolve(__dirname, "..", p)
 
-const projectPackage = require(resolve("package.json"))
-
 const compiler = webpack(webpackConfig)
 const app = express()
 
@@ -33,7 +31,6 @@ devMiddlewareInstance.waitUntilValid(() => {
   }
 
   console.log(`dev server is now listening at ${url}`)
-  console.log(`project name: ${projectPackage.name}`)
 })
 
 app.use(devMiddlewareInstance)
