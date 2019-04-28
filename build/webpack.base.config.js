@@ -58,6 +58,20 @@ module.exports = {
       },
 
       {
+        test: /\.styl(us)?/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "stylus-loader",
+            options: {
+              import: [resolve("src/config.styl")],
+            },
+          },
+        ],
+      },
+
+      {
         test: /\.vue$/,
         loader: "vue-loader",
       },
