@@ -4,7 +4,9 @@
 
 <script>
 export default {
-
+  mounted() {
+    axios.get("lalalal")
+  },
 }
 </script>
 <style lang="stylus">
