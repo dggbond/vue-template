@@ -66,7 +66,6 @@ module.exports = {
             loader: "stylus-loader",
             options: {
               import: [resolve("src/config.styl")],
-              import: [resolve("src/style.styl")],
             },
           },
         ],
