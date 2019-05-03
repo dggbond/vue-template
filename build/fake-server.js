@@ -16,13 +16,14 @@ const init = () => {
 }
 
 app.get("*", (req, res) => {
+  console.log(req.url)
   res
     .status(200)
     .end()
 })
 
 module.exports = {
-  fakeServerOpen: false,
+  fakeServerOpen: true,
   fakeServerInit: init,
   fakeServerPort: port,
 }

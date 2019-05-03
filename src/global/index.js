@@ -4,9 +4,8 @@ import Axios from "axios"
 import * as utils from "utils"
 import displayError from "error"
 
-// Global css or stylus
+// Global css
 import "normalize.css"
-import "style.styl"
 
 window.axios = Axios
 window._displayError = displayError
