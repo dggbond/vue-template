@@ -42,7 +42,6 @@ devMiddlewareInstance.waitUntilValid(() => {
 })
 
 app.use(devMiddlewareInstance)
-
 app.use(hotMiddlewareInstance)
 
 // http proxy

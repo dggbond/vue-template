@@ -7,4 +7,10 @@
 - Webpack module rules 中的 loader 顺序是从左往右，所以需注意顺序，比如 style-loader
 不能在 css-loader 执行之前，否则就会报错
 
-- 除了安装 vue-loader 之外，必须安装 vue-template-compiler 否则会报错。
+- 除了安装 `vue-loader` 之外，必须安装 `vue-template-compiler` 否则会报错。
+
+## Rules
+
+- `util.js`只放一些和业务不相关的 pure function。
+
+- `share`文件夹放一些复用的逻辑代码。

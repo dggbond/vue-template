@@ -1,13 +1,12 @@
 <template lang="pug">
-#app.app apps
+#app.app
 </template>
 
 <script>
 export default {
   mounted() {
     axios.get("lalalal")
+    console.log("app mounted")
   },
 }
 </script>
-<style lang="stylus">
-</style>
