@@ -12,9 +12,6 @@ const proxyMiddleware  = require("http-proxy-middleware")
 const webpackConfig = require("./webpack.dev.config")
 const serverConfig = require("./server.config")
 
-// fake server
-const { fakeServerOpen, fakeServerInit } = require("./fake-server")
-
 const resolve = p => path.resolve(__dirname, "..", p)
 
 const compiler = webpack(webpackConfig)
@@ -32,10 +29,6 @@ devMiddlewareInstance.waitUntilValid(() => {
 
   if(!process.argv.includes("-n")) {
     open(url, { app: "google chrome" })
-  }
-
-  if(fakeServerOpen) {
-    fakeServerInit()
   }
 
   console.log(`dev server is now listening at ${url}`)

@@ -1,5 +1,3 @@
-const { fakeServerPort } = require("./fake-server")
-
 const defaultPort = 9000
 
 const customPortIndex = process.argv.indexOf("-p")
@@ -13,11 +11,6 @@ module.exports = {
   proxyTable: {
     "/api": {
       target: "http://localhost",
-      changeOrigin: true,
-    },
-
-    "/fake": {
-      target: `http://localhost:${fakeServerPort}`,
       changeOrigin: true,
     },
   },
