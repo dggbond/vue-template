@@ -22,11 +22,11 @@ module.exports = {
     modules: [
       "node_modules",
       resolve("src"),
-      resolve("components"),
     ],
 
     alias: {
       "@": resolve("src/pages"),
+      "comp": resolve("src/components"),
     },
   },
 

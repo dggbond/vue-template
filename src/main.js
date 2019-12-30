@@ -3,6 +3,7 @@ import store from "store"
 import router from "router"
 
 import "global"
+import "comp/common"
 import "style.styl"
 
 Vue.productionTip = false
