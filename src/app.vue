@@ -1,5 +1,6 @@
 <template lang="pug">
 #app.app
+  _button
 </template>
 
 <script>

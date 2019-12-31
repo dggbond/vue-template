@@ -47,6 +47,7 @@ module.exports = {
           options: {
             exclude: /node_modules/,
             presets: ["@babel/preset-env"],
+            plugins: ["transform-vue-jsx"],
           },
         },
       },
