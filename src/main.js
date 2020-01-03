@@ -9,7 +9,6 @@ import * as util from "util"
 import displayError from "error"
 
 // css
-import "global"
 import "style.styl"
 import "normalize.css"
 

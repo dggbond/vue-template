@@ -4,6 +4,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
+const HappyPack = require("happypack")
 
 const resolve = p => path.resolve(__dirname, "..", p)
 
@@ -42,14 +43,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            exclude: /node_modules/,
-            presets: ["@babel/preset-env"],
-            plugins: ["transform-vue-jsx"],
-          },
-        },
+        use: "happypack/loader?id=js",
+        exclude: /node_modules/,
       },
 
       {
@@ -66,7 +61,7 @@ module.exports = {
           {
             loader: "stylus-loader",
             options: {
-              import: [resolve("config.styl")],
+              import: [resolve("config/config.styl")],
             },
           },
         ],
@@ -76,21 +71,23 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
       },
-
-      // 用于 import 图片时，可以得到图片的绝对路径，一般不需要用到，字体也是
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   use: ["file-loader"],
-      // },
-
-      // {
-      //   test: /\.(woff|woff2|ttf|otf)$/,
-      //   use: ["file-loader"],
-      // },
     ],
   },
 
   plugins: [
+    new HappyPack({
+      id: "js",
+      loaders: [
+        {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: ["transform-vue-jsx"],
+          },
+        },
+      ],
+    }),
+
     new HtmlWebpackPlugin({
       template: resolve("index.html"),
       filename: "index.html", // default
