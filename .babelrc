@@ -1,0 +1,8 @@
+{
+  "plugins": ["transform-vue-jsx"],
+  "presets": ["@babel/preset-env"],
+  "ignore": [
+    "foo.js",
+    "bar/**/*.js"
+  ]
+}

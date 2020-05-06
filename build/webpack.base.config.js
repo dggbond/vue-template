@@ -80,10 +80,6 @@ module.exports = {
       loaders: [
         {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["transform-vue-jsx"],
-          },
         },
       ],
     }),

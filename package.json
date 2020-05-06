@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server",
-    "build": "webpack --config build/webpack.prod.config",
+    "build": "webpack --config build/webpack.prod.config --progress",
     "browserslist": "browserslist"
   },
   "dependencies": {
