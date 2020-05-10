@@ -12,6 +12,16 @@ const router = new Router({
     {
       path: "/",
       component: App,
+      children: [
+        {
+          path: "home",
+          component: () => import("@/home"),
+        },
+        {
+          path: "me",
+          component: () => import("@/me"),
+        },
+      ],
     },
   ],
 })

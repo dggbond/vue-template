@@ -10,7 +10,7 @@ const resolve = p => path.resolve(__dirname, "..", p)
 
 module.exports = {
   entry: {
-    app: [resolve("src/main.js")],
+    app: "./src/main.js",
   },
 
   output: {
@@ -28,13 +28,6 @@ module.exports = {
     alias: {
       "@": resolve("src/pages"),
       "comp": resolve("src/components"),
-    },
-  },
-
-  optimization: {
-    // 可以将输出中相同的依赖抽离，这样可以缩小输出文件的大小。
-    splitChunks: {
-      chunks: "all",
     },
   },
 

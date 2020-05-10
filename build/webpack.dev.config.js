@@ -17,7 +17,7 @@ const hotMidOptions = {
 }
 
 Object.keys(entry).forEach(key => {
-  entry[key].push(`webpack-hot-middleware/client?${qs.stringify(hotMidOptions)}`)
+  entry[key] = [`webpack-hot-middleware/client?${qs.stringify(hotMidOptions)}`].concat(entry[key])
 })
 
 module.exports = merge(webpackBaseConfig, {

@@ -21,6 +21,13 @@ module.exports = merge(webpackBaseConfig, {
     chunkFilename: "js/[name].[contenthash].chunk.js",
   },
 
+  optimization: {
+    // 可以将输出中相同的依赖抽离，这样可以缩小输出文件的大小。
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+
   module: {
     rules: [
       {
