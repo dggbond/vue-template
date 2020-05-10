@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "caniuse-lite": "1.0.30001054",
     "lodash": "^4.17.11",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.10",
@@ -26,6 +27,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-syntax-jsx": "6.18.0",
     "babel-plugin-transform-vue-jsx": "3.7.0",
+    "browserslist": "4.12.0",
     "clean-webpack-plugin": "^2.0.1",
     "connect-history-api-fallback": "1.6.0",
     "copy-webpack-plugin": "^5.0.3",
