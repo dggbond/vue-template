@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require("vue-loader/lib/plugin")
 const HappyPack = require("happypack")
+const { ProgressPlugin } = require("webpack")
 
 const resolve = p => path.resolve(__dirname, "..", p)
 
@@ -83,11 +84,17 @@ module.exports = {
     }),
 
     // 拷贝静态文件夹，不用任何处理
-    new CopyWebpackPlugin([{
-      from: "static",
-      to: "static",
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "static",
+          to: "static",
+        },
+      ],
+    }),
 
     new VueLoaderPlugin(),
+
+    new ProgressPlugin(),
   ],
 }

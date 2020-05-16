@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server",
+    "open": "node scripts/open",
     "build": "webpack --config build/webpack.prod.config --progress",
     "browserslist": "browserslist"
   },
@@ -35,7 +36,6 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "happypack": "5.0.1",
     "html-webpack-plugin": "^4.3.0",
-    "http-proxy-middleware": "^1.0.3",
     "mini-css-extract-plugin": "^0.9.0",
     "open": "^7.0.4",
     "pug": "^2.0.4",

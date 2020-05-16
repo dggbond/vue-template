@@ -7,6 +7,4 @@ const port = customPortIndex === -1 ? defaultPort : Number(customPort)
 
 module.exports = {
   port,
-
-  proxyTable: {},
 }
