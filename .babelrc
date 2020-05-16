@@ -1,8 +1,4 @@
 {
-  "plugins": [
-    "transform-vue-jsx",
-    "@babel/plugin-syntax-dynamic-import"
-  ],
   "presets": [
     [
       "@babel/preset-env",
@@ -12,5 +8,8 @@
       },
     ]
   ],
-  "ignore": []
+  "ignore": [],
+  "plugins": [
+    "transform-vue-jsx"
+  ]
 }
