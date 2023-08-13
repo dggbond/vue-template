@@ -1,56 +1,36 @@
 {
   "name": "vue-template",
-  "version": "0.0.0",
-  "repository": "git@github.com:zmaoo/vue-template.git",
-  "author": "mao.zheng <zhengmao0613@163.com>",
-  "license": "MIT",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "node build/dev-server",
-    "open": "node scripts/open",
-    "build": "webpack --config build/webpack.prod.config --progress",
-    "browserslist": "browserslist"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.ts,.tsx,.vue .",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "normalize.css": "^8.0.1",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.6",
-    "vuex": "^3.4.0"
+    "@vicons/ionicons5": "0.12.0",
+    "naive-ui": "2.34.3",
+    "pinia": "2.0.35",
+    "vue": "^3.3.4",
+    "vue-router": "4.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.6",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-syntax-jsx": "6.18.0",
-    "babel-plugin-transform-vue-jsx": "3.7.0",
-    "browserslist": "4.12.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "connect-history-api-fallback": "1.6.0",
-    "copy-webpack-plugin": "^6.0.0",
-    "core-js": "3",
-    "css-loader": "^3.5.3",
-    "express": "^4.17.1",
-    "friendly-errors-webpack-plugin": "^1.7.0",
-    "happypack": "5.0.1",
-    "html-webpack-plugin": "^4.3.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "open": "^7.0.4",
-    "pug": "^2.0.4",
-    "pug-loader": "2.4.0",
-    "pug-plain-loader": "^1.0.0",
-    "snazzy": "^8.0.0",
-    "style-loader": "^1.2.1",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "vue-loader": "^15.9.2",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0",
-    "webpack-merge": "^4.2.2"
+    "@types/node": "18.15.11",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-typescript": "11.0.2",
+    "eslint": "8.37.0",
+    "eslint-plugin-vue": "9.10.0",
+    "husky": "^8.0.0",
+    "lint-staged": "13.2.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.4.4"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,vue}": [
+      "eslint --fix --quiet"
+    ]
   }
 }
