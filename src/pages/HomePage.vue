@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { onMounted } from "vue"
+import { onMounted } from 'vue'
 
 onMounted(() => {
-  console.log("home page mounted")
+  console.log('home page mounted')
 })
 </script>
 

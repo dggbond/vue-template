@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import router, { routes } from "~/router"
+import router, { routes } from '~/router'
 
-import { NMenu } from "naive-ui"
+import { NMenu } from 'naive-ui'
 
-import type { MenuOption } from "naive-ui"
-import type { RouteRecordRaw } from "vue-router"
+import type { MenuOption } from 'naive-ui'
+import type { RouteRecordRaw } from 'vue-router'
 
 const routeToMenuOption = (r: RouteRecordRaw, ancestorPath: string): MenuOption => {
   const menuOption: MenuOption = {
@@ -14,16 +14,16 @@ const routeToMenuOption = (r: RouteRecordRaw, ancestorPath: string): MenuOption 
   }
 
   if (r.children) {
-    menuOption.type = "group"
+    menuOption.type = 'group'
     menuOption.children = r.children.map((item) => routeToMenuOption(item, ancestorPath + r.path))
   }
 
   return menuOption
 }
 
-const menuOptions: MenuOption[] = routes.map((item) => routeToMenuOption(item, ""))
+const menuOptions: MenuOption[] = routes.map((item) => routeToMenuOption(item, ''))
 
-const handleUpdateValue = (key: string, info: MenuOption) => {
+const handleUpdateValue = (key: string) => {
   router.push(key)
 }
 </script>

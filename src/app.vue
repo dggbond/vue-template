@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import SidebarMenu from "~/components/SidebarMenu.vue"
-import { useAppStore } from "~/store/app"
+import SidebarMenu from '~/components/SidebarMenu.vue'
+import { useAppStore } from '~/store/app'
 
-import { ref } from "vue"
-import { NLayout, NLayoutSider, NConfigProvider, NLayoutHeader, NButton, NIcon } from "naive-ui"
-import { Moon, Sunny } from "@vicons/ionicons5"
-import { RouterView } from "vue-router"
+import { ref } from 'vue'
+import { NLayout, NLayoutSider, NConfigProvider, NLayoutHeader, NButton, NIcon } from 'naive-ui'
+import { Moon, Sunny } from '@vicons/ionicons5'
+import { RouterView } from 'vue-router'
 
 const collapsed = ref(false)
 const appStore = useAppStore()
